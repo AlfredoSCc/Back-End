@@ -22,6 +22,6 @@ const productosModel = mongoose.Schema({
         type: Number,
         require: true
     }
-});
+})
 
 module.exports = mongoose.model("Productos",productosModel);

@@ -16,7 +16,12 @@ router.get("/productos",(req, res) =>{
 
 //POST
 
-
+router.post("/productos",(req, res) => {
+    const registro = productosModel(rep.body);
+    registro.save()
+    .then((data)=> res.json(data))
+    .catch((error) => res.json({mensaje: error}));
+})
 //PUT
 
 

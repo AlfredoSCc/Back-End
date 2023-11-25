@@ -2,13 +2,17 @@
 const express = require("express")
 const mongoose = require("mongoose")
 require("dotenv").config()
-const productos = require("./models/productos")
+const productos = require("./routes/productos")
 
 //-Configuraciones-----------
 
 //Inicializamos los paquetes
 const app = express();
 const puerto = 9000;
+
+//-Middleware------------------
+app.use(express.json());
+app.use("/api", productos);
 
 
 //-Rutas------------------------------
@@ -17,7 +21,7 @@ app.get("/prueba",(req, res) => {res.send("Pagina de Prueba")});
 app.get("/",(req, res) => {res.send("Pagina de Principal")});
 
 //Construimos la ruta 
-app.use("/api",productos);
+//app.use("/api",productos);
 
 
 //-Ejecución---------------
