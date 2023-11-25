@@ -1,11 +1,12 @@
-//Importación de Paquetes
+//Llamada de Paquetes
 const express = require("express")
 
 
+//Configuraciones
 
-//Definir Configuraciones
-//Inicializamos el paquete express
+//Inicializamos los paquetes
 const app = express();
+const puerto = 6000;
 
 
 //Ejecución
