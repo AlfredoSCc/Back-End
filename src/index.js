@@ -9,12 +9,15 @@ const app = express();
 const puerto = 6000;
 
 
+//Rutas
+
+app.get("/prueba",(req, res) => {
+    res.send("Pagina de Prueba")
+});
+
+
 //Ejecución
-
-app.get("/prueba", function (req,res){
-    res.send("Hola, estas en la web de prueba")
-})
-
-//Puerto en el que Escuchara o trabajara nuestra pagina
-
-app.listen(3000);
+//Indico que escuche las peticiones en el puerto
+app.listen(puerto,()=>{ 
+console.log("Servidor escuchando en el puerto " + puerto)
+});
